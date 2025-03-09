@@ -1,4 +1,43 @@
-here is the code:
+# Dinosaur Game on ESP32 with OLED
+
+## 🦖 Overview
+This project implements a simple dinosaur jumping game on an ESP32 using a 0.96" OLED display (I2C). The dinosaur jumps over obstacles when the push button is pressed.
+
+## 🦖 Components Required
+- **ESP32**
+- **0.96" OLED Display (I2C, SSD1306)**
+- **Push Button** (for jump control)
+- **Jumper Wires & Breadboard**
+
+## 🦖 Wiring Diagram
+### **Connect OLED to ESP32**
+| OLED Pin | ESP32 Pin |
+|----------|----------|
+| VCC      | 3.3V     |
+| GND      | GND      |
+| SDA      | GPIO 21  |
+| SCL      | GPIO 22  |
+
+⚠ **Note:** The ESP32 operates at **3.3V logic level**, so ensure the OLED is compatible.
+
+### **Connect the Jump Button**
+| Button Pin | ESP32 Pin |
+|------------|----------|
+| One Side to GND |  |
+| Other Side to GPIO 15 | *(Configured as INPUT_PULLUP in code)* |
+
+## 🦖 Installing Required Libraries
+1. Open **Arduino IDE**.
+2. Go to **Sketch → Include Library → Manage Libraries**.
+3. Install the following libraries:
+   - **Adafruit SSD1306**
+   - **Adafruit GFX**
+
+## 🦖 Code Implementation
+The following code initializes the OLED display, reads button presses for jumping, applies gravity mechanics, and updates the screen with the game state.
+
+### **Code**
+```cpp
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
@@ -87,7 +126,7 @@ void loop() {
   display.display();
   delay(30);
 }
-end of the code
+```
 
 ## 🦖 Uploading and Testing the Code
 1. **Connect ESP32** to your PC via USB.
