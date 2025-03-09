@@ -24,7 +24,7 @@ This project implements a simple dinosaur jumping game on an ESP32 using a 0.96"
 | Button Pin | ESP32 Pin |
 |------------|----------|
 | One Side to GND |  |
-| Other Side to GPIO 15 | *(Configured as INPUT_PULLUP in code)* |
+| Other Side to GPIO 4 | *(Configured as INPUT_PULLUP in code)* |
 
 ## 🦖 Installing Required Libraries
 1. Open **Arduino IDE**.
@@ -36,8 +36,7 @@ This project implements a simple dinosaur jumping game on an ESP32 using a 0.96"
 ## 🦖 Code Implementation
 The following code initializes the OLED display, reads button presses for jumping, applies gravity mechanics, and updates the screen with the game state.
 
-### **Code**
-```cpp
+here is the code:
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
@@ -126,7 +125,7 @@ void loop() {
   display.display();
   delay(30);
 }
-```
+end of the code
 
 ## 🦖 Uploading and Testing the Code
 1. **Connect ESP32** to your PC via USB.
